@@ -7,11 +7,11 @@ const {LexerErrorListener, ParserErrorListener} = require('./errors-processing')
 const DateRangeParserError = require('./date-range-parser-error');
 const DateRangeParserVisitor = require('./parse-tree-to-date-range');
 
-const TIMEZONE_OFFSET = (new Date()).getTimezoneOffset() * 60000;
+const getTimezoneOffset = (date) => (date).getTimezoneOffset() * 60000;
 
 const formatResult = ({min, max}) => ({
-    _min: new Date(min.getTime() - TIMEZONE_OFFSET).toISOString(),
-    _max: new Date(max.getTime() - TIMEZONE_OFFSET).toISOString()
+    _min: min && new Date(min.getTime() - getTimezoneOffset(min)).toISOString(),
+    _max: max && new Date(max.getTime() - getTimezoneOffset(max)).toISOString()
 });
 
 const parse = (text) => {

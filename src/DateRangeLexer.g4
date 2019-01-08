@@ -10,6 +10,8 @@ PREVIOUS: [pP][rR][eE][vV][iI][oO][uU][sS] ;
 BETWEEN: [bB][eE][tT][wW][eE][eE][nN] ;
 TODAY: [tT][oO][dD][aA][yY] ;
 YESTERDAY: [yY][eE][sS][tT][eE][rR][dD][aA][yY] ;
+FROM: [fF][rR][oO][mM] ;
+TO: [tT][oO] ;
 DATE_RANGE: DAY|WEEK|MONTH|QUARTER|YEAR ;
 NUMERIC_DATE_RANGE: DAYS|WEEKS|MONTHS|QUARTERS|YEARS ;
 

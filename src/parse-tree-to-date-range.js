@@ -18,6 +18,11 @@ const INTERVAL_DATE_FNS_MAP = {
 };
 const intervalToDateFns = (interval) => INTERVAL_DATE_FNS_MAP[interval];
 const toResult = (min, max) => ({min, max});
+const checkInterval = (min, max) => {
+    if (min > max) {
+        throw new DateRangeParserError('The start date of the date range should be earlier than the end date');
+    }
+};
 
 class ParseTreeToDateRangeVisitor extends DateRangeParserVisitor {
     constructor(date) {
@@ -105,9 +110,7 @@ class ParseTreeToDateRangeVisitor extends DateRangeParserVisitor {
         const {min} = this.visit(ctx.min);
         const {max} = this.visit(ctx.max);
 
-        if (min > max) {
-            throw new DateRangeParserError('The start date of the date range should be earlier than the end date');
-        }
+        checkInterval(min, max);
 
         return toResult(min, max);
     }
@@ -124,6 +127,23 @@ class ParseTreeToDateRangeVisitor extends DateRangeParserVisitor {
         const resDate = start(sub(start(this.date), num));
 
         return toResult(resDate, subMilliseconds(resDate, 1));
+    }
+
+    visitFrom(ctx) {
+        const {min} = this.visit(ctx.date);
+        return toResult(min, null);
+    }
+
+    visitTo(ctx) {
+        const {min} = this.visit(ctx.date);
+        return toResult(null, min);
+    }
+
+    visitFromTo(ctx) {
+        const {min: from} = this.visit(ctx.dateFrom);
+        const {min: to} = this.visit(ctx.dateTo);
+
+        return toResult(from, to);
     }
 }
 

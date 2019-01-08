@@ -10,6 +10,9 @@ expr :
   | PREVIOUS interval=intervalExpr # PreviousInterval
   | PREVIOUS interval=numericIntervalExpr # PreviousNumericInterval
   | BETWEEN min=betweenArgExpr AND max=betweenArgExpr # Between
+  | FROM date=basicDateExpr # From
+  | TO date=basicDateExpr # To
+  | FROM dateFrom=basicDateExpr TO dateTo=basicDateExpr # FromTo
   ;
 
 basicDateExpr :

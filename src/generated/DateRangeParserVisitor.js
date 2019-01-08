@@ -52,6 +52,24 @@ DateRangeParserVisitor.prototype.visitBetween = function(ctx) {
 };
 
 
+// Visit a parse tree produced by DateRangeParser#From.
+DateRangeParserVisitor.prototype.visitFrom = function(ctx) {
+  return this.visitChildren(ctx);
+};
+
+
+// Visit a parse tree produced by DateRangeParser#To.
+DateRangeParserVisitor.prototype.visitTo = function(ctx) {
+  return this.visitChildren(ctx);
+};
+
+
+// Visit a parse tree produced by DateRangeParser#FromTo.
+DateRangeParserVisitor.prototype.visitFromTo = function(ctx) {
+  return this.visitChildren(ctx);
+};
+
+
 // Visit a parse tree produced by DateRangeParser#Today.
 DateRangeParserVisitor.prototype.visitToday = function(ctx) {
   return this.visitChildren(ctx);

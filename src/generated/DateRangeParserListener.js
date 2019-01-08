@@ -72,6 +72,33 @@ DateRangeParserListener.prototype.exitBetween = function(ctx) {
 };
 
 
+// Enter a parse tree produced by DateRangeParser#From.
+DateRangeParserListener.prototype.enterFrom = function(ctx) {
+};
+
+// Exit a parse tree produced by DateRangeParser#From.
+DateRangeParserListener.prototype.exitFrom = function(ctx) {
+};
+
+
+// Enter a parse tree produced by DateRangeParser#To.
+DateRangeParserListener.prototype.enterTo = function(ctx) {
+};
+
+// Exit a parse tree produced by DateRangeParser#To.
+DateRangeParserListener.prototype.exitTo = function(ctx) {
+};
+
+
+// Enter a parse tree produced by DateRangeParser#FromTo.
+DateRangeParserListener.prototype.enterFromTo = function(ctx) {
+};
+
+// Exit a parse tree produced by DateRangeParser#FromTo.
+DateRangeParserListener.prototype.exitFromTo = function(ctx) {
+};
+
+
 // Enter a parse tree produced by DateRangeParser#Today.
 DateRangeParserListener.prototype.enterToday = function(ctx) {
 };
