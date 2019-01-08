@@ -1,0 +1,41 @@
+{
+  "name": "@vizydrop/date-range-grammar",
+  "version": "1.0.0",
+  "description": "Vizydrop date range grammar with samples",
+  "main": "index.js",
+  "scripts": {
+    "lint": "eslint .",
+    "test": "jest",
+    "coverage": "jest --coverage"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vizydrop/date-range-grammar.git"
+  },
+  "keywords": [
+    "vizydrop",
+    "date-range",
+    "grammar"
+  ],
+  "homepage": "https://github.com/vizydrop/date-range-grammar",
+  "bugs": {
+    "url": "https://github.com/vizydrop/date-range-grammar/issues"
+  },
+  "license": "MIT",
+  "author": "Vizydrop Team",
+  "dependencies": {
+    "antlr4": "4.7.2",
+    "date-fns": "2.0.0-alpha.26"
+  },
+  "devDependencies": {
+    "eslint": "4.17.0",
+    "eslint-config-vizydrop": "github:vizydrop/eslint-config-vizydrop#4.2.0",
+    "eslint-plugin-flowtype": "2.49.3",
+    "eslint-plugin-import": "2.13.0",
+    "eslint-plugin-mocha": "5.1.0",
+    "eslint-plugin-node": "6.0.1",
+    "eslint-plugin-promise": "3.8.0",
+    "eslint-plugin-standard": "3.1.0",
+    "jest": "23.6.0"
+  }
+}

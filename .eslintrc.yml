@@ -1,0 +1,4 @@
+extends: vizydrop/server
+
+env:
+  jest: true
