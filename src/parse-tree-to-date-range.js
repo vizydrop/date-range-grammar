@@ -1,10 +1,29 @@
 'use strict';
 
-const {
-    startOfDay, endOfDay, addDays, subDays, parse, isValid, startOfISOWeek, endOfISOWeek,
-    startOfMonth, endOfMonth, startOfQuarter, endOfQuarter, startOfYear, endOfYear, addWeeks, subWeeks,
-    addMonths, subMonths, addQuarters, subQuarters, addYears, subYears, subMilliseconds
-} = require('date-fns');
+const startOfDay = require('date-fns/startOfDay');
+const endOfDay = require('date-fns/endOfDay');
+const addDays = require('date-fns/addDays');
+const subDays = require('date-fns/subDays');
+const parse = require('date-fns/parse');
+const isValid = require('date-fns/isValid');
+const startOfISOWeek = require('date-fns/startOfISOWeek');
+const endOfISOWeek = require('date-fns/endOfISOWeek');
+const startOfMonth = require('date-fns/startOfMonth');
+const endOfMonth = require('date-fns/endOfMonth');
+const startOfQuarter = require('date-fns/startOfQuarter');
+const endOfQuarter = require('date-fns/endOfQuarter');
+const startOfYear = require('date-fns/startOfYear');
+const endOfYear = require('date-fns/endOfYear');
+const addWeeks = require('date-fns/addWeeks');
+const subWeeks = require('date-fns/subWeeks');
+const addMonths = require('date-fns/addMonths');
+const subMonths = require('date-fns/subMonths');
+const addQuarters = require('date-fns/addQuarters');
+const subQuarters = require('date-fns/subQuarters');
+const addYears = require('date-fns/addYears');
+const subYears = require('date-fns/subYears');
+const subMilliseconds = require('date-fns/subMilliseconds');
+
 const DateRangeParserError = require('./date-range-parser-error');
 const {DateRangeParserVisitor} = require(`./generated/DateRangeParserVisitor`);
 
