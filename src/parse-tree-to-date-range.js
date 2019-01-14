@@ -162,6 +162,8 @@ class ParseTreeToDateRangeVisitor extends DateRangeParserVisitor {
         const {min: from} = this.visit(ctx.dateFrom);
         const {min: to} = this.visit(ctx.dateTo);
 
+        checkInterval(from, to);
+
         return toResult(from, to);
     }
 }

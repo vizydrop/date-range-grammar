@@ -105,6 +105,7 @@ describe('Date Range Parser', () => {
         expect(() => parseDateRange('this TEST', CURRENT_DATE)).toThrowError(new DateRangeParserError('Wrong format is set for Date Range'));
         expect(() => parseDateRange('test', CURRENT_DATE)).toThrowError(new DateRangeParserError('Wrong format is set for Date Range'));
         expect(() => parseDateRange('10 Test 2017', CURRENT_DATE)).toThrowError(new DateRangeParserError('Invalid date is set in Date Range'));
+        expect(() => parseDateRange('from 01-Jan-2010 to 01-Jan-2008', CURRENT_DATE)).toThrowError(new DateRangeParserError('The start date of the date range should be earlier than the end date'));
         expect(() => parseDateRange('BETWEEN 5 January 2016 AND 1 January 2016', CURRENT_DATE)).toThrowError(new DateRangeParserError('The start date of the date range should be earlier than the end date'));
     });
 });

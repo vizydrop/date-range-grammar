@@ -10,6 +10,22 @@ module.exports = [
         'title': 'Starts at 12:00:00 AM on the first day of the week before the current week and continues for seven days'
     },
     {
+        'value': 'THIS WEEK',
+        'title': 'Starts at 12:00:00 AM on the first day of the current week and continues for seven days'
+    },
+    {
+        'value': 'YESTERDAY',
+        'title': 'Starts at 12:00:00 AM on the day before the current day and continues for 24 hours'
+    },
+    {
+        'value': 'TODAY',
+        'title': 'Starts at 12:00:00 AM on the current day and continues until the end of the current day'
+    },
+    {
+        'value': 'BETWEEN MONTH AGO AND TODAY',
+        'title': 'Starts at 12:00:00 AM on the first day of the calendar month before the current calendar month and continues until the end of the current day'
+    },
+    {
         'value': 'PREVIOUS MONTH',
         'title': 'Starts at 12:00:00 AM on the first day of the month before the current month and continues for all the days of that month'
     },
@@ -38,10 +54,6 @@ module.exports = [
         'title': 'Starts at 12:00:00 AM on January 1, four years ago. The range ends on December 31 of the year before the current year'
     },
     {
-        'value': 'THIS WEEK',
-        'title': 'Starts at 12:00:00 AM on the first day of the current week and continues for seven days'
-    },
-    {
         'value': 'THIS MONTH',
         'title': 'Starts at 12:00:00 AM on the first day of the current month and continues for all the days of that month'
     },
@@ -52,18 +64,6 @@ module.exports = [
     {
         'value': 'THIS YEAR',
         'title': 'Starts at 12:00:00 AM on January 1 of the current year and continues through the end of December 31 of the current year'
-    },
-    {
-        'value': 'YESTERDAY',
-        'title': 'Starts at 12:00:00 AM on the day before the current day and continues for 24 hours'
-    },
-    {
-        'value': 'TODAY',
-        'title': 'Starts at 12:00:00 AM on the current day and continues until the end of the current day'
-    },
-    {
-        'value': 'BETWEEN MONTH AGO AND TODAY',
-        'title': 'Starts at 12:00:00 AM on the first day of the calendar month before the current calendar month and continues until the end of the current day'
     },
     {
         'value': 'BETWEEN 6 QUARTERS AGO AND 2 MONTHS AGO',
