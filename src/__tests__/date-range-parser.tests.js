@@ -91,9 +91,9 @@ describe('Date Range Parser', () => {
             ['BETWEEN 3 MONTHS AGO AND 1 Dec 2017', {_min: '2017-03-01T00:00:00.000Z', _max: '2017-12-01T23:59:59.999Z'}],
             ['FROM 1 Dec 2010', {_min: '2010-12-01T00:00:00.000Z', _max: null}],
             ['FROM YESTERDAY', {_min: '2017-06-12T00:00:00.000Z', _max: null}],
-            ['TO 1 Dec 2010', {_min: null, _max: '2010-12-01T00:00:00.000Z'}],
-            ['TO TODAY', {_min: null, _max: '2017-06-13T00:00:00.000Z'}],
-            ['from 1 Dec 2010 to 1 Oct 2011', {_min: '2010-12-01T00:00:00.000Z', _max: '2011-10-01T00:00:00.000Z'}]
+            ['TO 1 Dec 2010', {_min: null, _max: '2010-12-01T23:59:59.999Z'}],
+            ['TO TODAY', {_min: null, _max: '2017-06-13T23:59:59.999Z'}],
+            ['from 1 Dec 2010 to 1 Oct 2011', {_min: '2010-12-01T00:00:00.000Z', _max: '2011-10-01T23:59:59.999Z'}]
         ];
 
         tests.forEach(([value, result]) => {
