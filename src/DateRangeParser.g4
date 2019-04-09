@@ -5,9 +5,9 @@ mainExpression : expr EOF;
 
 expr :
   date=basicDateExpr # BasicDate
-  | (THIS|LAST) interval=intervalExpr # CurrentInterval
+  | interval=currentIntervalExpr # CurrentInterval
   | LAST interval=numericIntervalExpr # LastNumericInterval
-  | PREVIOUS interval=intervalExpr # PreviousInterval
+  | interval=previousIntervalExpr # PreviousInterval
   | PREVIOUS interval=numericIntervalExpr # PreviousNumericInterval
   | BETWEEN min=betweenArgExpr AND max=betweenArgExpr # Between
   | FROM date=basicDateExpr # From
@@ -25,7 +25,12 @@ betweenArgExpr :
   date=basicDateExpr # BasicDateBetween
   | interval=intervalExpr AGO # IntervalAgo
   | interval=numericIntervalExpr AGO # NumericIntervalAgo
+  | interval=currentIntervalExpr # CurrentIntervalAgo
+  | interval=previousIntervalExpr # PreviousIntervalAgo
   ;
 
 intervalExpr : interval=DATE_RANGE # Interval ;
 numericIntervalExpr : num=NUMBER interval=NUMERIC_DATE_RANGE # NumericInterval ;
+currentIntervalExpr: (THIS|LAST) interval=intervalExpr # CurrentIntervalCommon ;
+previousIntervalExpr: PREVIOUS interval=intervalExpr # PreviousIntervalCommon ;
+

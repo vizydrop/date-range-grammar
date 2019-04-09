@@ -4,45 +4,51 @@ var DateRangeParserVisitor = require('./DateRangeParserVisitor').DateRangeParser
 
 var grammarFileName = "DateRangeParser.g4";
 
+
 var serializedATN = ["\u0003\u608b\ua72a\u8133\ub9ed\u417c\u3be7\u7786\u5964",
-    "\u0003\u001d>\u0004\u0002\t\u0002\u0004\u0003\t\u0003\u0004\u0004\t",
-    "\u0004\u0004\u0005\t\u0005\u0004\u0006\t\u0006\u0004\u0007\t\u0007\u0003",
-    "\u0002\u0003\u0002\u0003\u0002\u0003\u0003\u0003\u0003\u0003\u0003\u0003",
+    "\u0003\u001dH\u0004\u0002\t\u0002\u0004\u0003\t\u0003\u0004\u0004\t",
+    "\u0004\u0004\u0005\t\u0005\u0004\u0006\t\u0006\u0004\u0007\t\u0007\u0004",
+    "\b\t\b\u0004\t\t\t\u0003\u0002\u0003\u0002\u0003\u0002\u0003\u0003\u0003",
     "\u0003\u0003\u0003\u0003\u0003\u0003\u0003\u0003\u0003\u0003\u0003\u0003",
     "\u0003\u0003\u0003\u0003\u0003\u0003\u0003\u0003\u0003\u0003\u0003\u0003",
     "\u0003\u0003\u0003\u0003\u0003\u0003\u0003\u0003\u0003\u0003\u0003\u0003",
-    "\u0003\u0003\u0003\u0005\u0003)\n\u0003\u0003\u0004\u0003\u0004\u0003",
-    "\u0004\u0005\u0004.\n\u0004\u0003\u0005\u0003\u0005\u0003\u0005\u0003",
-    "\u0005\u0003\u0005\u0003\u0005\u0003\u0005\u0005\u00057\n\u0005\u0003",
-    "\u0006\u0003\u0006\u0003\u0007\u0003\u0007\u0003\u0007\u0003\u0007\u0002",
-    "\u0002\b\u0002\u0004\u0006\b\n\f\u0002\u0003\u0003\u0002\u0007\b\u0002",
-    "C\u0002\u000e\u0003\u0002\u0002\u0002\u0004(\u0003\u0002\u0002\u0002",
-    "\u0006-\u0003\u0002\u0002\u0002\b6\u0003\u0002\u0002\u0002\n8\u0003",
-    "\u0002\u0002\u0002\f:\u0003\u0002\u0002\u0002\u000e\u000f\u0005\u0004",
-    "\u0003\u0002\u000f\u0010\u0007\u0002\u0002\u0003\u0010\u0003\u0003\u0002",
-    "\u0002\u0002\u0011)\u0005\u0006\u0004\u0002\u0012\u0013\t\u0002\u0002",
-    "\u0002\u0013)\u0005\n\u0006\u0002\u0014\u0015\u0007\b\u0002\u0002\u0015",
-    ")\u0005\f\u0007\u0002\u0016\u0017\u0007\t\u0002\u0002\u0017)\u0005\n",
-    "\u0006\u0002\u0018\u0019\u0007\t\u0002\u0002\u0019)\u0005\f\u0007\u0002",
-    "\u001a\u001b\u0007\n\u0002\u0002\u001b\u001c\u0005\b\u0005\u0002\u001c",
-    "\u001d\u0007\u0005\u0002\u0002\u001d\u001e\u0005\b\u0005\u0002\u001e",
-    ")\u0003\u0002\u0002\u0002\u001f \u0007\r\u0002\u0002 )\u0005\u0006\u0004",
-    "\u0002!\"\u0007\u000e\u0002\u0002\")\u0005\u0006\u0004\u0002#$\u0007",
-    "\r\u0002\u0002$%\u0005\u0006\u0004\u0002%&\u0007\u000e\u0002\u0002&",
-    "\'\u0005\u0006\u0004\u0002\')\u0003\u0002\u0002\u0002(\u0011\u0003\u0002",
-    "\u0002\u0002(\u0012\u0003\u0002\u0002\u0002(\u0014\u0003\u0002\u0002",
-    "\u0002(\u0016\u0003\u0002\u0002\u0002(\u0018\u0003\u0002\u0002\u0002",
-    "(\u001a\u0003\u0002\u0002\u0002(\u001f\u0003\u0002\u0002\u0002(!\u0003",
-    "\u0002\u0002\u0002(#\u0003\u0002\u0002\u0002)\u0005\u0003\u0002\u0002",
-    "\u0002*.\u0007\u000b\u0002\u0002+.\u0007\f\u0002\u0002,.\u0007\u0003",
-    "\u0002\u0002-*\u0003\u0002\u0002\u0002-+\u0003\u0002\u0002\u0002-,\u0003",
-    "\u0002\u0002\u0002.\u0007\u0003\u0002\u0002\u0002/7\u0005\u0006\u0004",
-    "\u000201\u0005\n\u0006\u000212\u0007\u0006\u0002\u000227\u0003\u0002",
-    "\u0002\u000234\u0005\f\u0007\u000245\u0007\u0006\u0002\u000257\u0003",
-    "\u0002\u0002\u00026/\u0003\u0002\u0002\u000260\u0003\u0002\u0002\u0002",
-    "63\u0003\u0002\u0002\u00027\t\u0003\u0002\u0002\u000289\u0007\u000f",
-    "\u0002\u00029\u000b\u0003\u0002\u0002\u0002:;\u0007\u0004\u0002\u0002",
-    ";<\u0007\u0010\u0002\u0002<\r\u0003\u0002\u0002\u0002\u0005(-6"].join("");
+    "\u0003\u0003\u0003\u0005\u0003+\n\u0003\u0003\u0004\u0003\u0004\u0003",
+    "\u0004\u0005\u00040\n\u0004\u0003\u0005\u0003\u0005\u0003\u0005\u0003",
+    "\u0005\u0003\u0005\u0003\u0005\u0003\u0005\u0003\u0005\u0003\u0005\u0005",
+    "\u0005;\n\u0005\u0003\u0006\u0003\u0006\u0003\u0007\u0003\u0007\u0003",
+    "\u0007\u0003\b\u0003\b\u0003\b\u0003\t\u0003\t\u0003\t\u0003\t\u0002",
+    "\u0002\n\u0002\u0004\u0006\b\n\f\u000e\u0010\u0002\u0003\u0003\u0002",
+    "\u0007\b\u0002M\u0002\u0012\u0003\u0002\u0002\u0002\u0004*\u0003\u0002",
+    "\u0002\u0002\u0006/\u0003\u0002\u0002\u0002\b:\u0003\u0002\u0002\u0002",
+    "\n<\u0003\u0002\u0002\u0002\f>\u0003\u0002\u0002\u0002\u000eA\u0003",
+    "\u0002\u0002\u0002\u0010D\u0003\u0002\u0002\u0002\u0012\u0013\u0005",
+    "\u0004\u0003\u0002\u0013\u0014\u0007\u0002\u0002\u0003\u0014\u0003\u0003",
+    "\u0002\u0002\u0002\u0015+\u0005\u0006\u0004\u0002\u0016+\u0005\u000e",
+    "\b\u0002\u0017\u0018\u0007\b\u0002\u0002\u0018+\u0005\f\u0007\u0002",
+    "\u0019+\u0005\u0010\t\u0002\u001a\u001b\u0007\t\u0002\u0002\u001b+\u0005",
+    "\f\u0007\u0002\u001c\u001d\u0007\n\u0002\u0002\u001d\u001e\u0005\b\u0005",
+    "\u0002\u001e\u001f\u0007\u0005\u0002\u0002\u001f \u0005\b\u0005\u0002",
+    " +\u0003\u0002\u0002\u0002!\"\u0007\r\u0002\u0002\"+\u0005\u0006\u0004",
+    "\u0002#$\u0007\u000e\u0002\u0002$+\u0005\u0006\u0004\u0002%&\u0007\r",
+    "\u0002\u0002&\'\u0005\u0006\u0004\u0002\'(\u0007\u000e\u0002\u0002(",
+    ")\u0005\u0006\u0004\u0002)+\u0003\u0002\u0002\u0002*\u0015\u0003\u0002",
+    "\u0002\u0002*\u0016\u0003\u0002\u0002\u0002*\u0017\u0003\u0002\u0002",
+    "\u0002*\u0019\u0003\u0002\u0002\u0002*\u001a\u0003\u0002\u0002\u0002",
+    "*\u001c\u0003\u0002\u0002\u0002*!\u0003\u0002\u0002\u0002*#\u0003\u0002",
+    "\u0002\u0002*%\u0003\u0002\u0002\u0002+\u0005\u0003\u0002\u0002\u0002",
+    ",0\u0007\u000b\u0002\u0002-0\u0007\f\u0002\u0002.0\u0007\u0003\u0002",
+    "\u0002/,\u0003\u0002\u0002\u0002/-\u0003\u0002\u0002\u0002/.\u0003\u0002",
+    "\u0002\u00020\u0007\u0003\u0002\u0002\u00021;\u0005\u0006\u0004\u0002",
+    "23\u0005\n\u0006\u000234\u0007\u0006\u0002\u00024;\u0003\u0002\u0002",
+    "\u000256\u0005\f\u0007\u000267\u0007\u0006\u0002\u00027;\u0003\u0002",
+    "\u0002\u00028;\u0005\u000e\b\u00029;\u0005\u0010\t\u0002:1\u0003\u0002",
+    "\u0002\u0002:2\u0003\u0002\u0002\u0002:5\u0003\u0002\u0002\u0002:8\u0003",
+    "\u0002\u0002\u0002:9\u0003\u0002\u0002\u0002;\t\u0003\u0002\u0002\u0002",
+    "<=\u0007\u000f\u0002\u0002=\u000b\u0003\u0002\u0002\u0002>?\u0007\u0004",
+    "\u0002\u0002?@\u0007\u0010\u0002\u0002@\r\u0003\u0002\u0002\u0002AB",
+    "\t\u0002\u0002\u0002BC\u0005\n\u0006\u0002C\u000f\u0003\u0002\u0002",
+    "\u0002DE\u0007\t\u0002\u0002EF\u0005\n\u0006\u0002F\u0011\u0003\u0002",
+    "\u0002\u0002\u0005*/:"].join("");
 
 
 var atn = new antlr4.atn.ATNDeserializer().deserialize(serializedATN);
@@ -60,7 +66,8 @@ var symbolicNames = [ null, "DATE", "NUMBER", "AND", "AGO", "THIS", "LAST",
                       "YEARS", "DAY", "MONTH", "WEEK", "QUARTER", "YEAR" ];
 
 var ruleNames =  [ "mainExpression", "expr", "basicDateExpr", "betweenArgExpr", 
-                   "intervalExpr", "numericIntervalExpr" ];
+                   "intervalExpr", "numericIntervalExpr", "currentIntervalExpr", 
+                   "previousIntervalExpr" ];
 
 function DateRangeParser (input) {
 	antlr4.Parser.call(this, input);
@@ -115,6 +122,9 @@ DateRangeParser.RULE_basicDateExpr = 2;
 DateRangeParser.RULE_betweenArgExpr = 3;
 DateRangeParser.RULE_intervalExpr = 4;
 DateRangeParser.RULE_numericIntervalExpr = 5;
+DateRangeParser.RULE_currentIntervalExpr = 6;
+DateRangeParser.RULE_previousIntervalExpr = 7;
+
 
 function MainExpressionContext(parser, parent, invokingState) {
 	if(parent===undefined) {
@@ -171,9 +181,9 @@ DateRangeParser.prototype.mainExpression = function() {
     this.enterRule(localctx, 0, DateRangeParser.RULE_mainExpression);
     try {
         this.enterOuterAlt(localctx, 1);
-        this.state = 12;
+        this.state = 16;
         this.expr();
-        this.state = 13;
+        this.state = 17;
         this.match(DateRangeParser.EOF);
     } catch (re) {
     	if(re instanceof antlr4.error.RecognitionException) {
@@ -188,6 +198,7 @@ DateRangeParser.prototype.mainExpression = function() {
     }
     return localctx;
 };
+
 
 function ExprContext(parser, parent, invokingState) {
 	if(parent===undefined) {
@@ -254,7 +265,7 @@ PreviousNumericIntervalContext.prototype.accept = function(visitor) {
 
 function PreviousIntervalContext(parser, ctx) {
 	ExprContext.call(this, parser);
-    this.interval = null; // IntervalExprContext;
+    this.interval = null; // PreviousIntervalExprContext;
     ExprContext.prototype.copyFrom.call(this, ctx);
     return this;
 }
@@ -264,12 +275,8 @@ PreviousIntervalContext.prototype.constructor = PreviousIntervalContext;
 
 DateRangeParser.PreviousIntervalContext = PreviousIntervalContext;
 
-PreviousIntervalContext.prototype.PREVIOUS = function() {
-    return this.getToken(DateRangeParser.PREVIOUS, 0);
-};
-
-PreviousIntervalContext.prototype.intervalExpr = function() {
-    return this.getTypedRuleContext(IntervalExprContext,0);
+PreviousIntervalContext.prototype.previousIntervalExpr = function() {
+    return this.getTypedRuleContext(PreviousIntervalExprContext,0);
 };
 PreviousIntervalContext.prototype.enterRule = function(listener) {
     if(listener instanceof DateRangeParserListener ) {
@@ -398,7 +405,7 @@ FromToContext.prototype.accept = function(visitor) {
 
 function CurrentIntervalContext(parser, ctx) {
 	ExprContext.call(this, parser);
-    this.interval = null; // IntervalExprContext;
+    this.interval = null; // CurrentIntervalExprContext;
     ExprContext.prototype.copyFrom.call(this, ctx);
     return this;
 }
@@ -408,16 +415,8 @@ CurrentIntervalContext.prototype.constructor = CurrentIntervalContext;
 
 DateRangeParser.CurrentIntervalContext = CurrentIntervalContext;
 
-CurrentIntervalContext.prototype.THIS = function() {
-    return this.getToken(DateRangeParser.THIS, 0);
-};
-
-CurrentIntervalContext.prototype.LAST = function() {
-    return this.getToken(DateRangeParser.LAST, 0);
-};
-
-CurrentIntervalContext.prototype.intervalExpr = function() {
-    return this.getTypedRuleContext(IntervalExprContext,0);
+CurrentIntervalContext.prototype.currentIntervalExpr = function() {
+    return this.getTypedRuleContext(CurrentIntervalExprContext,0);
 };
 CurrentIntervalContext.prototype.enterRule = function(listener) {
     if(listener instanceof DateRangeParserListener ) {
@@ -603,103 +602,91 @@ DateRangeParser.prototype.expr = function() {
 
     var localctx = new ExprContext(this, this._ctx, this.state);
     this.enterRule(localctx, 2, DateRangeParser.RULE_expr);
-    var _la = 0; // Token type
     try {
-        this.state = 38;
+        this.state = 40;
         this._errHandler.sync(this);
         var la_ = this._interp.adaptivePredict(this._input,0,this._ctx);
         switch(la_) {
         case 1:
             localctx = new BasicDateContext(this, localctx);
             this.enterOuterAlt(localctx, 1);
-            this.state = 15;
+            this.state = 19;
             localctx.date = this.basicDateExpr();
             break;
 
         case 2:
             localctx = new CurrentIntervalContext(this, localctx);
             this.enterOuterAlt(localctx, 2);
-            this.state = 16;
-            _la = this._input.LA(1);
-            if(!(_la===DateRangeParser.THIS || _la===DateRangeParser.LAST)) {
-            this._errHandler.recoverInline(this);
-            }
-            else {
-            	this._errHandler.reportMatch(this);
-                this.consume();
-            }
-            this.state = 17;
-            localctx.interval = this.intervalExpr();
+            this.state = 20;
+            localctx.interval = this.currentIntervalExpr();
             break;
 
         case 3:
             localctx = new LastNumericIntervalContext(this, localctx);
             this.enterOuterAlt(localctx, 3);
-            this.state = 18;
+            this.state = 21;
             this.match(DateRangeParser.LAST);
-            this.state = 19;
+            this.state = 22;
             localctx.interval = this.numericIntervalExpr();
             break;
 
         case 4:
             localctx = new PreviousIntervalContext(this, localctx);
             this.enterOuterAlt(localctx, 4);
-            this.state = 20;
-            this.match(DateRangeParser.PREVIOUS);
-            this.state = 21;
-            localctx.interval = this.intervalExpr();
+            this.state = 23;
+            localctx.interval = this.previousIntervalExpr();
             break;
 
         case 5:
             localctx = new PreviousNumericIntervalContext(this, localctx);
             this.enterOuterAlt(localctx, 5);
-            this.state = 22;
+            this.state = 24;
             this.match(DateRangeParser.PREVIOUS);
-            this.state = 23;
+            this.state = 25;
             localctx.interval = this.numericIntervalExpr();
             break;
 
         case 6:
             localctx = new BetweenContext(this, localctx);
             this.enterOuterAlt(localctx, 6);
-            this.state = 24;
-            this.match(DateRangeParser.BETWEEN);
-            this.state = 25;
-            localctx.min = this.betweenArgExpr();
             this.state = 26;
-            this.match(DateRangeParser.AND);
+            this.match(DateRangeParser.BETWEEN);
             this.state = 27;
+            localctx.min = this.betweenArgExpr();
+            this.state = 28;
+            this.match(DateRangeParser.AND);
+            this.state = 29;
             localctx.max = this.betweenArgExpr();
             break;
 
         case 7:
             localctx = new FromContext(this, localctx);
             this.enterOuterAlt(localctx, 7);
-            this.state = 29;
+            this.state = 31;
             this.match(DateRangeParser.FROM);
-            this.state = 30;
+            this.state = 32;
             localctx.date = this.basicDateExpr();
             break;
 
         case 8:
             localctx = new ToContext(this, localctx);
             this.enterOuterAlt(localctx, 8);
-            this.state = 31;
+            this.state = 33;
             this.match(DateRangeParser.TO);
-            this.state = 32;
+            this.state = 34;
             localctx.date = this.basicDateExpr();
             break;
 
         case 9:
             localctx = new FromToContext(this, localctx);
             this.enterOuterAlt(localctx, 9);
-            this.state = 33;
-            this.match(DateRangeParser.FROM);
-            this.state = 34;
-            localctx.dateFrom = this.basicDateExpr();
             this.state = 35;
-            this.match(DateRangeParser.TO);
+            this.match(DateRangeParser.FROM);
             this.state = 36;
+            localctx.dateFrom = this.basicDateExpr();
+            this.state = 37;
+            this.match(DateRangeParser.TO);
+            this.state = 38;
             localctx.dateTo = this.basicDateExpr();
             break;
 
@@ -717,6 +704,7 @@ DateRangeParser.prototype.expr = function() {
     }
     return localctx;
 };
+
 
 function BasicDateExprContext(parser, parent, invokingState) {
 	if(parent===undefined) {
@@ -855,25 +843,25 @@ DateRangeParser.prototype.basicDateExpr = function() {
     var localctx = new BasicDateExprContext(this, this._ctx, this.state);
     this.enterRule(localctx, 4, DateRangeParser.RULE_basicDateExpr);
     try {
-        this.state = 43;
+        this.state = 45;
         this._errHandler.sync(this);
         switch(this._input.LA(1)) {
         case DateRangeParser.TODAY:
             localctx = new TodayContext(this, localctx);
             this.enterOuterAlt(localctx, 1);
-            this.state = 40;
+            this.state = 42;
             this.match(DateRangeParser.TODAY);
             break;
         case DateRangeParser.YESTERDAY:
             localctx = new YesterdayContext(this, localctx);
             this.enterOuterAlt(localctx, 2);
-            this.state = 41;
+            this.state = 43;
             this.match(DateRangeParser.YESTERDAY);
             break;
         case DateRangeParser.DATE:
             localctx = new DateContext(this, localctx);
             this.enterOuterAlt(localctx, 3);
-            this.state = 42;
+            this.state = 44;
             localctx.date = this.match(DateRangeParser.DATE);
             break;
         default:
@@ -892,6 +880,7 @@ DateRangeParser.prototype.basicDateExpr = function() {
     }
     return localctx;
 };
+
 
 function BetweenArgExprContext(parser, parent, invokingState) {
 	if(parent===undefined) {
@@ -952,6 +941,42 @@ BasicDateBetweenContext.prototype.accept = function(visitor) {
 };
 
 
+function PreviousIntervalAgoContext(parser, ctx) {
+	BetweenArgExprContext.call(this, parser);
+    this.interval = null; // PreviousIntervalExprContext;
+    BetweenArgExprContext.prototype.copyFrom.call(this, ctx);
+    return this;
+}
+
+PreviousIntervalAgoContext.prototype = Object.create(BetweenArgExprContext.prototype);
+PreviousIntervalAgoContext.prototype.constructor = PreviousIntervalAgoContext;
+
+DateRangeParser.PreviousIntervalAgoContext = PreviousIntervalAgoContext;
+
+PreviousIntervalAgoContext.prototype.previousIntervalExpr = function() {
+    return this.getTypedRuleContext(PreviousIntervalExprContext,0);
+};
+PreviousIntervalAgoContext.prototype.enterRule = function(listener) {
+    if(listener instanceof DateRangeParserListener ) {
+        listener.enterPreviousIntervalAgo(this);
+	}
+};
+
+PreviousIntervalAgoContext.prototype.exitRule = function(listener) {
+    if(listener instanceof DateRangeParserListener ) {
+        listener.exitPreviousIntervalAgo(this);
+	}
+};
+
+PreviousIntervalAgoContext.prototype.accept = function(visitor) {
+    if ( visitor instanceof DateRangeParserVisitor ) {
+        return visitor.visitPreviousIntervalAgo(this);
+    } else {
+        return visitor.visitChildren(this);
+    }
+};
+
+
 function NumericIntervalAgoContext(parser, ctx) {
 	BetweenArgExprContext.call(this, parser);
     this.interval = null; // NumericIntervalExprContext;
@@ -986,6 +1011,42 @@ NumericIntervalAgoContext.prototype.exitRule = function(listener) {
 NumericIntervalAgoContext.prototype.accept = function(visitor) {
     if ( visitor instanceof DateRangeParserVisitor ) {
         return visitor.visitNumericIntervalAgo(this);
+    } else {
+        return visitor.visitChildren(this);
+    }
+};
+
+
+function CurrentIntervalAgoContext(parser, ctx) {
+	BetweenArgExprContext.call(this, parser);
+    this.interval = null; // CurrentIntervalExprContext;
+    BetweenArgExprContext.prototype.copyFrom.call(this, ctx);
+    return this;
+}
+
+CurrentIntervalAgoContext.prototype = Object.create(BetweenArgExprContext.prototype);
+CurrentIntervalAgoContext.prototype.constructor = CurrentIntervalAgoContext;
+
+DateRangeParser.CurrentIntervalAgoContext = CurrentIntervalAgoContext;
+
+CurrentIntervalAgoContext.prototype.currentIntervalExpr = function() {
+    return this.getTypedRuleContext(CurrentIntervalExprContext,0);
+};
+CurrentIntervalAgoContext.prototype.enterRule = function(listener) {
+    if(listener instanceof DateRangeParserListener ) {
+        listener.enterCurrentIntervalAgo(this);
+	}
+};
+
+CurrentIntervalAgoContext.prototype.exitRule = function(listener) {
+    if(listener instanceof DateRangeParserListener ) {
+        listener.exitCurrentIntervalAgo(this);
+	}
+};
+
+CurrentIntervalAgoContext.prototype.accept = function(visitor) {
+    if ( visitor instanceof DateRangeParserVisitor ) {
+        return visitor.visitCurrentIntervalAgo(this);
     } else {
         return visitor.visitChildren(this);
     }
@@ -1040,7 +1101,7 @@ DateRangeParser.prototype.betweenArgExpr = function() {
     var localctx = new BetweenArgExprContext(this, this._ctx, this.state);
     this.enterRule(localctx, 6, DateRangeParser.RULE_betweenArgExpr);
     try {
-        this.state = 52;
+        this.state = 56;
         this._errHandler.sync(this);
         switch(this._input.LA(1)) {
         case DateRangeParser.DATE:
@@ -1048,24 +1109,37 @@ DateRangeParser.prototype.betweenArgExpr = function() {
         case DateRangeParser.YESTERDAY:
             localctx = new BasicDateBetweenContext(this, localctx);
             this.enterOuterAlt(localctx, 1);
-            this.state = 45;
+            this.state = 47;
             localctx.date = this.basicDateExpr();
             break;
         case DateRangeParser.DATE_RANGE:
             localctx = new IntervalAgoContext(this, localctx);
             this.enterOuterAlt(localctx, 2);
-            this.state = 46;
+            this.state = 48;
             localctx.interval = this.intervalExpr();
-            this.state = 47;
+            this.state = 49;
             this.match(DateRangeParser.AGO);
             break;
         case DateRangeParser.NUMBER:
             localctx = new NumericIntervalAgoContext(this, localctx);
             this.enterOuterAlt(localctx, 3);
-            this.state = 49;
+            this.state = 51;
             localctx.interval = this.numericIntervalExpr();
-            this.state = 50;
+            this.state = 52;
             this.match(DateRangeParser.AGO);
+            break;
+        case DateRangeParser.THIS:
+        case DateRangeParser.LAST:
+            localctx = new CurrentIntervalAgoContext(this, localctx);
+            this.enterOuterAlt(localctx, 4);
+            this.state = 54;
+            localctx.interval = this.currentIntervalExpr();
+            break;
+        case DateRangeParser.PREVIOUS:
+            localctx = new PreviousIntervalAgoContext(this, localctx);
+            this.enterOuterAlt(localctx, 5);
+            this.state = 55;
+            localctx.interval = this.previousIntervalExpr();
             break;
         default:
             throw new antlr4.error.NoViableAltException(this);
@@ -1083,6 +1157,7 @@ DateRangeParser.prototype.betweenArgExpr = function() {
     }
     return localctx;
 };
+
 
 function IntervalExprContext(parser, parent, invokingState) {
 	if(parent===undefined) {
@@ -1153,7 +1228,7 @@ DateRangeParser.prototype.intervalExpr = function() {
     try {
         localctx = new IntervalContext(this, localctx);
         this.enterOuterAlt(localctx, 1);
-        this.state = 54;
+        this.state = 58;
         localctx.interval = this.match(DateRangeParser.DATE_RANGE);
     } catch (re) {
     	if(re instanceof antlr4.error.RecognitionException) {
@@ -1168,6 +1243,7 @@ DateRangeParser.prototype.intervalExpr = function() {
     }
     return localctx;
 };
+
 
 function NumericIntervalExprContext(parser, parent, invokingState) {
 	if(parent===undefined) {
@@ -1243,10 +1319,206 @@ DateRangeParser.prototype.numericIntervalExpr = function() {
     try {
         localctx = new NumericIntervalContext(this, localctx);
         this.enterOuterAlt(localctx, 1);
-        this.state = 56;
+        this.state = 60;
         localctx.num = this.match(DateRangeParser.NUMBER);
-        this.state = 57;
+        this.state = 61;
         localctx.interval = this.match(DateRangeParser.NUMERIC_DATE_RANGE);
+    } catch (re) {
+    	if(re instanceof antlr4.error.RecognitionException) {
+	        localctx.exception = re;
+	        this._errHandler.reportError(this, re);
+	        this._errHandler.recover(this, re);
+	    } else {
+	    	throw re;
+	    }
+    } finally {
+        this.exitRule();
+    }
+    return localctx;
+};
+
+
+function CurrentIntervalExprContext(parser, parent, invokingState) {
+	if(parent===undefined) {
+	    parent = null;
+	}
+	if(invokingState===undefined || invokingState===null) {
+		invokingState = -1;
+	}
+	antlr4.ParserRuleContext.call(this, parent, invokingState);
+    this.parser = parser;
+    this.ruleIndex = DateRangeParser.RULE_currentIntervalExpr;
+    return this;
+}
+
+CurrentIntervalExprContext.prototype = Object.create(antlr4.ParserRuleContext.prototype);
+CurrentIntervalExprContext.prototype.constructor = CurrentIntervalExprContext;
+
+
+ 
+CurrentIntervalExprContext.prototype.copyFrom = function(ctx) {
+    antlr4.ParserRuleContext.prototype.copyFrom.call(this, ctx);
+};
+
+
+function CurrentIntervalCommonContext(parser, ctx) {
+	CurrentIntervalExprContext.call(this, parser);
+    this.interval = null; // IntervalExprContext;
+    CurrentIntervalExprContext.prototype.copyFrom.call(this, ctx);
+    return this;
+}
+
+CurrentIntervalCommonContext.prototype = Object.create(CurrentIntervalExprContext.prototype);
+CurrentIntervalCommonContext.prototype.constructor = CurrentIntervalCommonContext;
+
+DateRangeParser.CurrentIntervalCommonContext = CurrentIntervalCommonContext;
+
+CurrentIntervalCommonContext.prototype.THIS = function() {
+    return this.getToken(DateRangeParser.THIS, 0);
+};
+
+CurrentIntervalCommonContext.prototype.LAST = function() {
+    return this.getToken(DateRangeParser.LAST, 0);
+};
+
+CurrentIntervalCommonContext.prototype.intervalExpr = function() {
+    return this.getTypedRuleContext(IntervalExprContext,0);
+};
+CurrentIntervalCommonContext.prototype.enterRule = function(listener) {
+    if(listener instanceof DateRangeParserListener ) {
+        listener.enterCurrentIntervalCommon(this);
+	}
+};
+
+CurrentIntervalCommonContext.prototype.exitRule = function(listener) {
+    if(listener instanceof DateRangeParserListener ) {
+        listener.exitCurrentIntervalCommon(this);
+	}
+};
+
+CurrentIntervalCommonContext.prototype.accept = function(visitor) {
+    if ( visitor instanceof DateRangeParserVisitor ) {
+        return visitor.visitCurrentIntervalCommon(this);
+    } else {
+        return visitor.visitChildren(this);
+    }
+};
+
+
+
+DateRangeParser.CurrentIntervalExprContext = CurrentIntervalExprContext;
+
+DateRangeParser.prototype.currentIntervalExpr = function() {
+
+    var localctx = new CurrentIntervalExprContext(this, this._ctx, this.state);
+    this.enterRule(localctx, 12, DateRangeParser.RULE_currentIntervalExpr);
+    var _la = 0; // Token type
+    try {
+        localctx = new CurrentIntervalCommonContext(this, localctx);
+        this.enterOuterAlt(localctx, 1);
+        this.state = 63;
+        _la = this._input.LA(1);
+        if(!(_la===DateRangeParser.THIS || _la===DateRangeParser.LAST)) {
+        this._errHandler.recoverInline(this);
+        }
+        else {
+        	this._errHandler.reportMatch(this);
+            this.consume();
+        }
+        this.state = 64;
+        localctx.interval = this.intervalExpr();
+    } catch (re) {
+    	if(re instanceof antlr4.error.RecognitionException) {
+	        localctx.exception = re;
+	        this._errHandler.reportError(this, re);
+	        this._errHandler.recover(this, re);
+	    } else {
+	    	throw re;
+	    }
+    } finally {
+        this.exitRule();
+    }
+    return localctx;
+};
+
+
+function PreviousIntervalExprContext(parser, parent, invokingState) {
+	if(parent===undefined) {
+	    parent = null;
+	}
+	if(invokingState===undefined || invokingState===null) {
+		invokingState = -1;
+	}
+	antlr4.ParserRuleContext.call(this, parent, invokingState);
+    this.parser = parser;
+    this.ruleIndex = DateRangeParser.RULE_previousIntervalExpr;
+    return this;
+}
+
+PreviousIntervalExprContext.prototype = Object.create(antlr4.ParserRuleContext.prototype);
+PreviousIntervalExprContext.prototype.constructor = PreviousIntervalExprContext;
+
+
+ 
+PreviousIntervalExprContext.prototype.copyFrom = function(ctx) {
+    antlr4.ParserRuleContext.prototype.copyFrom.call(this, ctx);
+};
+
+
+function PreviousIntervalCommonContext(parser, ctx) {
+	PreviousIntervalExprContext.call(this, parser);
+    this.interval = null; // IntervalExprContext;
+    PreviousIntervalExprContext.prototype.copyFrom.call(this, ctx);
+    return this;
+}
+
+PreviousIntervalCommonContext.prototype = Object.create(PreviousIntervalExprContext.prototype);
+PreviousIntervalCommonContext.prototype.constructor = PreviousIntervalCommonContext;
+
+DateRangeParser.PreviousIntervalCommonContext = PreviousIntervalCommonContext;
+
+PreviousIntervalCommonContext.prototype.PREVIOUS = function() {
+    return this.getToken(DateRangeParser.PREVIOUS, 0);
+};
+
+PreviousIntervalCommonContext.prototype.intervalExpr = function() {
+    return this.getTypedRuleContext(IntervalExprContext,0);
+};
+PreviousIntervalCommonContext.prototype.enterRule = function(listener) {
+    if(listener instanceof DateRangeParserListener ) {
+        listener.enterPreviousIntervalCommon(this);
+	}
+};
+
+PreviousIntervalCommonContext.prototype.exitRule = function(listener) {
+    if(listener instanceof DateRangeParserListener ) {
+        listener.exitPreviousIntervalCommon(this);
+	}
+};
+
+PreviousIntervalCommonContext.prototype.accept = function(visitor) {
+    if ( visitor instanceof DateRangeParserVisitor ) {
+        return visitor.visitPreviousIntervalCommon(this);
+    } else {
+        return visitor.visitChildren(this);
+    }
+};
+
+
+
+DateRangeParser.PreviousIntervalExprContext = PreviousIntervalExprContext;
+
+DateRangeParser.prototype.previousIntervalExpr = function() {
+
+    var localctx = new PreviousIntervalExprContext(this, this._ctx, this.state);
+    this.enterRule(localctx, 14, DateRangeParser.RULE_previousIntervalExpr);
+    try {
+        localctx = new PreviousIntervalCommonContext(this, localctx);
+        this.enterOuterAlt(localctx, 1);
+        this.state = 66;
+        this.match(DateRangeParser.PREVIOUS);
+        this.state = 67;
+        localctx.interval = this.intervalExpr();
     } catch (re) {
     	if(re instanceof antlr4.error.RecognitionException) {
 	        localctx.exception = re;

@@ -185,6 +185,12 @@ function DateRangeLexer(input) {
 DateRangeLexer.prototype = Object.create(antlr4.Lexer.prototype);
 DateRangeLexer.prototype.constructor = DateRangeLexer;
 
+Object.defineProperty(DateRangeLexer.prototype, "atn", {
+        get : function() {
+                return atn;
+        }
+});
+
 DateRangeLexer.EOF = antlr4.Token.EOF;
 DateRangeLexer.DATE = 1;
 DateRangeLexer.NUMBER = 2;

@@ -153,6 +153,24 @@ DateRangeParserListener.prototype.exitNumericIntervalAgo = function(ctx) {
 };
 
 
+// Enter a parse tree produced by DateRangeParser#CurrentIntervalAgo.
+DateRangeParserListener.prototype.enterCurrentIntervalAgo = function(ctx) {
+};
+
+// Exit a parse tree produced by DateRangeParser#CurrentIntervalAgo.
+DateRangeParserListener.prototype.exitCurrentIntervalAgo = function(ctx) {
+};
+
+
+// Enter a parse tree produced by DateRangeParser#PreviousIntervalAgo.
+DateRangeParserListener.prototype.enterPreviousIntervalAgo = function(ctx) {
+};
+
+// Exit a parse tree produced by DateRangeParser#PreviousIntervalAgo.
+DateRangeParserListener.prototype.exitPreviousIntervalAgo = function(ctx) {
+};
+
+
 // Enter a parse tree produced by DateRangeParser#Interval.
 DateRangeParserListener.prototype.enterInterval = function(ctx) {
 };
@@ -168,6 +186,24 @@ DateRangeParserListener.prototype.enterNumericInterval = function(ctx) {
 
 // Exit a parse tree produced by DateRangeParser#NumericInterval.
 DateRangeParserListener.prototype.exitNumericInterval = function(ctx) {
+};
+
+
+// Enter a parse tree produced by DateRangeParser#CurrentIntervalCommon.
+DateRangeParserListener.prototype.enterCurrentIntervalCommon = function(ctx) {
+};
+
+// Exit a parse tree produced by DateRangeParser#CurrentIntervalCommon.
+DateRangeParserListener.prototype.exitCurrentIntervalCommon = function(ctx) {
+};
+
+
+// Enter a parse tree produced by DateRangeParser#PreviousIntervalCommon.
+DateRangeParserListener.prototype.enterPreviousIntervalCommon = function(ctx) {
+};
+
+// Exit a parse tree produced by DateRangeParser#PreviousIntervalCommon.
+DateRangeParserListener.prototype.exitPreviousIntervalCommon = function(ctx) {
 };
 
 

@@ -106,6 +106,18 @@ DateRangeParserVisitor.prototype.visitNumericIntervalAgo = function(ctx) {
 };
 
 
+// Visit a parse tree produced by DateRangeParser#CurrentIntervalAgo.
+DateRangeParserVisitor.prototype.visitCurrentIntervalAgo = function(ctx) {
+  return this.visitChildren(ctx);
+};
+
+
+// Visit a parse tree produced by DateRangeParser#PreviousIntervalAgo.
+DateRangeParserVisitor.prototype.visitPreviousIntervalAgo = function(ctx) {
+  return this.visitChildren(ctx);
+};
+
+
 // Visit a parse tree produced by DateRangeParser#Interval.
 DateRangeParserVisitor.prototype.visitInterval = function(ctx) {
   return this.visitChildren(ctx);
@@ -114,6 +126,18 @@ DateRangeParserVisitor.prototype.visitInterval = function(ctx) {
 
 // Visit a parse tree produced by DateRangeParser#NumericInterval.
 DateRangeParserVisitor.prototype.visitNumericInterval = function(ctx) {
+  return this.visitChildren(ctx);
+};
+
+
+// Visit a parse tree produced by DateRangeParser#CurrentIntervalCommon.
+DateRangeParserVisitor.prototype.visitCurrentIntervalCommon = function(ctx) {
+  return this.visitChildren(ctx);
+};
+
+
+// Visit a parse tree produced by DateRangeParser#PreviousIntervalCommon.
+DateRangeParserVisitor.prototype.visitPreviousIntervalCommon = function(ctx) {
   return this.visitChildren(ctx);
 };
 

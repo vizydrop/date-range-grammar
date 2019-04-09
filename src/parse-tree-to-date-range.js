@@ -83,11 +83,17 @@ class ParseTreeToDateRangeVisitor extends DateRangeParserVisitor {
         throw new DateRangeParserError('Invalid date is set in Date Range');
     }
 
-    visitCurrentInterval(ctx) {
+    visitCurrentIntervalCommon(ctx) {
         const {date} = this;
         const {start, end} = this.visit(ctx.interval);
 
         return toResult(start(date), end(date));
+    }
+    visitCurrentInterval(ctx) {
+        return this.visit(ctx.interval);
+    }
+    visitCurrentIntervalAgo(ctx) {
+        return this.visit(ctx.interval);
     }
 
     visitLastNumericInterval(ctx) {
@@ -98,11 +104,17 @@ class ParseTreeToDateRangeVisitor extends DateRangeParserVisitor {
         return toResult(start(resDate), end(date));
     }
 
-    visitPreviousInterval(ctx) {
+    visitPreviousIntervalCommon(ctx) {
         const {start, end, sub} = this.visit(ctx.interval);
         const resDate = sub(start(this.date), 1);
 
         return toResult(start(resDate), end(resDate));
+    }
+    visitPreviousInterval(ctx) {
+        return this.visit(ctx.interval);
+    }
+    visitPreviousIntervalAgo(ctx) {
+        return this.visit(ctx.interval);
     }
 
     visitPreviousNumericInterval(ctx) {

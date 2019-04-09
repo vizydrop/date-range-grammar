@@ -89,6 +89,8 @@ describe('Date Range Parser', () => {
             ['BETWEEN 3 MONTHS AGO AND YESTERDAY', {_min: '2017-03-01T00:00:00.000Z', _max: '2017-06-12T23:59:59.999Z'}],
             ['BETWEEN 3 MONTHS AGO AND 2 DAYS AGO', {_min: '2017-03-01T00:00:00.000Z', _max: '2017-06-10T23:59:59.999Z'}],
             ['BETWEEN 3 MONTHS AGO AND 1 Dec 2017', {_min: '2017-03-01T00:00:00.000Z', _max: '2017-12-01T23:59:59.999Z'}],
+            ['BETWEEN 3 MONTHS AGO AND PREVIOUS WEEK', {_min: '2017-03-01T00:00:00.000Z', _max: '2017-06-11T23:59:59.999Z'}],
+            ['BETWEEN 3 MONTHS AGO AND THIS WEEK', {_min: '2017-03-01T00:00:00.000Z', _max: '2017-06-18T23:59:59.999Z'}],
             ['FROM 1 Dec 2010', {_min: '2010-12-01T00:00:00.000Z', _max: null}],
             ['FROM YESTERDAY', {_min: '2017-06-12T00:00:00.000Z', _max: null}],
             ['TO 1 Dec 2010', {_min: null, _max: '2010-12-01T23:59:59.999Z'}],

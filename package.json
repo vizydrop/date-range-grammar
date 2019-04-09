@@ -1,6 +1,6 @@
 {
   "name": "@vizydrop/date-range-grammar",
-  "version": "1.1.5",
+  "version": "1.2.0",
   "description": "Vizydrop date range grammar with samples",
   "main": "index.js",
   "scripts": {
