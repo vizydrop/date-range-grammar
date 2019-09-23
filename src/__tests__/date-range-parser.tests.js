@@ -103,6 +103,26 @@ describe('Date Range Parser', () => {
         });
     });
 
+    it('should correctly parse strings with timezone', () => {
+        const date = new Date(Date.UTC(2017, 5, 12, 0, 0, 0));
+        const timezone = `-03:00`;
+        const tests = [
+            ['TODAY', {_min: '2017-06-12T00:00:00.000Z', _max: '2017-06-12T23:59:59.999Z'}],
+            ['YESTERDAY', {_min: '2017-06-11T00:00:00.000Z', _max: '2017-06-11T23:59:59.999Z'}],
+            ['10 Jan 2017', {_min: '2017-01-10T00:00:00.000Z', _max: '2017-01-10T23:59:59.999Z'}],
+            ['THIS   DAY', {_min: '2017-06-12T00:00:00.000Z', _max: '2017-06-12T23:59:59.999Z'}],
+            ['PREVIOUS   DAY', {_min: '2017-06-11T00:00:00.000Z', _max: '2017-06-11T23:59:59.999Z'}],
+            ['FROM 1 Dec 2010', {_min: '2010-12-01T00:00:00.000Z', _max: null}],
+            ['FROM YESTERDAY', {_min: '2017-06-11T00:00:00.000Z', _max: null}],
+            ['TO TODAY', {_min: null, _max: '2017-06-12T23:59:59.999Z'}],
+            ['from 1 Dec 2010 to 1 Oct 2011', {_min: '2010-12-01T00:00:00.000Z', _max: '2011-10-01T23:59:59.999Z'}]
+        ];
+
+        tests.forEach(([value, result]) => {
+            expect(parseDateRange(value, date, timezone)).toEqual(result);
+        });
+    });
+
     it('should throw errors on invalid cases', () => {
         expect(() => parseDateRange('this TEST', CURRENT_DATE)).toThrowError(new DateRangeParserError('Wrong format is set for Date Range'));
         expect(() => parseDateRange('test', CURRENT_DATE)).toThrowError(new DateRangeParserError('Wrong format is set for Date Range'));

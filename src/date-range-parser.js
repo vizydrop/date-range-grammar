@@ -1,11 +1,13 @@
 'use strict';
 
 const antlr4 = require('antlr4');
+const addMinutes = require('date-fns/addMinutes/index');
 const {DateRangeLexer} = require('./generated/DateRangeLexer');
 const {DateRangeParser} = require('./generated/DateRangeParser');
 const {LexerErrorListener, ParserErrorListener} = require('./errors-processing');
 const DateRangeParserError = require('./date-range-parser-error');
 const DateRangeParserVisitor = require('./parse-tree-to-date-range');
+const {timezoneOffsetToMinutes} = require(`./timezone-parser`);
 
 const getTimezoneOffset = (date) => (date).getTimezoneOffset() * 60000;
 
@@ -35,14 +37,25 @@ const parse = (text) => {
     return {parseTree, hasErrors: lexerErrorListener.hasErrors || parserErrorListener.hasErrors};
 };
 
-const parseDateRange = (text, relativeDate) => {
+// timezone example +/-03:00
+const applyTimezone = (date, timezone) => {
+    if (!/[+-][0-9]{2}:[0-9]{2}/g.test(timezone)) {
+        return date;
+    }
+
+    const offsetInMinutes = timezoneOffsetToMinutes(timezone);
+    return addMinutes(date, offsetInMinutes);
+};
+
+const parseDateRange = (text, relativeDate, timezone) => {
     const {parseTree, hasErrors} = parse(text);
 
     if (hasErrors) {
         throw new DateRangeParserError('Wrong format is set for Date Range');
     }
 
-    const visitor = new DateRangeParserVisitor(relativeDate);
+    const dateWithTimezone = applyTimezone(relativeDate, timezone);
+    const visitor = new DateRangeParserVisitor(dateWithTimezone);
     return formatResult(visitor.visit(parseTree)[0]);
 };
 
