@@ -9,11 +9,21 @@ const DateRangeParserError = require('./date-range-parser-error');
 const DateRangeParserVisitor = require('./parse-tree-to-date-range');
 const {timezoneOffsetToMinutes} = require(`./timezone-parser`);
 
+const isTimezoneOffset = (timezone) => /[+-][0-9]{2}:[0-9]{2}/g.test(timezone);
+const isZeroTimezoneOffset = (timezone) => /[+-]*00:00/g.test(timezone);
 const getTimezoneOffset = (date) => (date).getTimezoneOffset() * 60000;
 
-const formatResult = ({min, max}) => ({
-    _min: min && new Date(min.getTime() - getTimezoneOffset(min)).toISOString(),
-    _max: max && new Date(max.getTime() - getTimezoneOffset(max)).toISOString()
+const toResultWithTimezone = (date, timezone) => {
+    if (date && isTimezoneOffset(timezone) && !isZeroTimezoneOffset(timezone)) {
+        return date.replace(`Z`, timezone);
+    }
+
+    return date;
+};
+
+const formatResult = ({min, max}, timezone) => ({
+    _min: toResultWithTimezone(min && new Date(min.getTime() - getTimezoneOffset(min)).toISOString(), timezone),
+    _max: toResultWithTimezone(max && new Date(max.getTime() - getTimezoneOffset(max)).toISOString(), timezone)
 });
 
 const parse = (text) => {
@@ -39,12 +49,14 @@ const parse = (text) => {
 
 // timezone example +/-03:00
 const applyTimezone = (date, timezone) => {
-    if (!/[+-][0-9]{2}:[0-9]{2}/g.test(timezone)) {
-        return date;
+    const dateWithoutLocalTimezoneOffset = addMinutes(date, date.getTimezoneOffset());
+
+    if (!isTimezoneOffset(timezone)) {
+        return dateWithoutLocalTimezoneOffset;
     }
 
     const offsetInMinutes = timezoneOffsetToMinutes(timezone);
-    return addMinutes(date, offsetInMinutes);
+    return addMinutes(dateWithoutLocalTimezoneOffset, offsetInMinutes);
 };
 
 const parseDateRange = (text, relativeDate, timezone) => {
@@ -56,7 +68,7 @@ const parseDateRange = (text, relativeDate, timezone) => {
 
     const dateWithTimezone = applyTimezone(relativeDate, timezone);
     const visitor = new DateRangeParserVisitor(dateWithTimezone);
-    return formatResult(visitor.visit(parseTree)[0]);
+    return formatResult(visitor.visit(parseTree)[0], timezone);
 };
 
 module.exports = {
